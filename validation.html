@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<script>
+		function validateForm()
+		{
+			var fn=document.forms["regform"]["firstname"].value;
+			var ln=document.forms["regform"]["lastname"].value;
+			var gn=document.forms["regform"]["gender"].value;
+
+			if(fn==null||fn=="")
+			{
+				alert("firstname name cannot be blank");
+				return false;
+			}
+			else if(ln==null||ln=="")
+			{
+			alert("Lastname name cannot be blank");
+			return false;	
+			}
+			else if ((gn[0].checked==false)&&(gn[1].checked==false)) 
+			{
+				alert("please enter your gender");
+				return false;
+			}
+		}		
+	</script>
+
+	<style >
+		div
+		{
+			margin:0px auto;
+			width: 40%;
+			padding: 30px;
+			font-size: 20px;
+			background-color: #006699;
+		}
+		input[type=text],select
+		{
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			box-sizing: 14px;
+		}
+		input[type=submit]
+		{
+			width: 100%;
+			background-color: #003399;
+			color: whitesmoke;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+		input[type=submit]:hover
+		{
+			background-color: #2f4f4f;
+		}
+		h1
+		{
+			color: blueviolet;
+			text-align: center;
+		}
+		div label
+		{
+			color: whitesmoke;
+
+		}
+	</style>
+</head>
+</head>
+<body>
+<h1>Registration Form</h1>
+<div>
+	<form name="regform" method="post" onsubmit="validateForm">
+		<label for="fname">First Name</label>
+		<input type="text" id="fname" name="firstname" placeholder="enter first name">
+
+		<label for="lname">Last Name</label>
+		<input type="text" id="fname" name="firstname" placeholder="enter first name">
+
+		<label>Gender</label><br/>
+		<input type="radio" id="male" value="male">
+		<label for="male">Male</label>
+
+		<input type="radio" id="female" value="female">
+		<label for="female">Female</label><br/>
+
+<input type="submit" value="Submit">				
+	</form>
+</div>
+</body>
+</html>
